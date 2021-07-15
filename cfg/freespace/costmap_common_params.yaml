@@ -10,13 +10,13 @@ map_type: costmap
 obstacle_layer:
   enabled: true
   obstacle_range: 60.0
-  raytrace_range: 60.0
-  inflation_radius: 1.0
+  raytrace_range: 5.0
+  inflation_radius: 3.0
   track_unknown_space: false
   combination_method: 1
 
   observation_sources: point_cloud2_sensor
-  point_cloud2_sensor: { data_type: PointCloud2, topic: cloud_tracked_objects, marking: false, clearing: true }
+  point_cloud2_sensor: { data_type: PointCloud2, topic: cloud_tracked_objects, marking: true, clearing: true, observation_persistence: 0.0 }
 
 
 inflation_layer:

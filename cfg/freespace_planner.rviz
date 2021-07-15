@@ -7,7 +7,6 @@ Panels:
         - /Global Options1
         - /Map1
         - /Local Planner1
-        - /Local Planner1/LocalCostmap1
         - /Grid2
       Splitter Ratio: 0.6050959825515747
     Tree Height: 657
@@ -88,7 +87,10 @@ Visualization Manager:
           Marker Topic: /move_base/TebLocalPlannerROS/teb_markers
           Name: TebMarker
           Namespaces:
-            {}
+            InfeasibleRobotPoses: true
+            PointObstacles: true
+            RobotFootprintModel: true
+            TebContainer: true
           Queue Size: 100
           Value: true
         - Alpha: 1
@@ -371,7 +373,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0
+      Angle: 0.01000002957880497
       Class: rviz/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -381,11 +383,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 16.972402572631836
+      Scale: 23.44725227355957
       Target Frame: base_link
       Value: TopDownOrtho (rviz)
-      X: 17.637117385864258
-      Y: -0.3696982264518738
+      X: 9.877284049987793
+      Y: 11.436711311340332
     Saved: ~
 Window Geometry:
   Displays:
@@ -403,5 +405,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1518
-  X: 2020
+  X: 2018
   Y: 0
