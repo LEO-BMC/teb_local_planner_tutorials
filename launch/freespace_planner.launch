@@ -22,6 +22,9 @@
   <!-- Odom Converter -->
   <node pkg="odom_publisher" type="odom_publisher_exe" name="odom_publisher_node"/>
 
+  <!-- Control Command Converter -->
+  <node pkg="vehicle_cmd_publisher" type="vehicle_cmd_publisher_exe" name="vehicle_cmd_publisher_node"/>
+
 
   <!-- Navigation -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
