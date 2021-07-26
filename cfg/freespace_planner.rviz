@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Map1
         - /Local Planner1
         - /Grid2
       Splitter Ratio: 0.6050959825515747
@@ -87,10 +86,7 @@ Visualization Manager:
           Marker Topic: /move_base/TebLocalPlannerROS/teb_markers
           Name: TebMarker
           Namespaces:
-            InfeasibleRobotPoses: true
-            PointObstacles: true
-            RobotFootprintModel: true
-            TebContainer: true
+            {}
           Queue Size: 100
           Value: true
         - Alpha: 1
@@ -310,7 +306,7 @@ Visualization Manager:
       Color: 239; 41; 41
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 0
@@ -327,7 +323,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 0.5
       Cell Size: 1
       Class: rviz/Grid
@@ -383,11 +379,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 23.44725227355957
+      Scale: 13.079105377197266
       Target Frame: base_link
       Value: TopDownOrtho (rviz)
-      X: 9.877284049987793
-      Y: 11.436711311340332
+      X: 22.850391387939453
+      Y: 0.8069009780883789
     Saved: ~
 Window Geometry:
   Displays:
@@ -405,5 +401,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1518
-  X: 2018
+  X: 2017
   Y: 0
