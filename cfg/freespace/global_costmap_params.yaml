@@ -47,8 +47,8 @@ global_costmap:
   static_map: false
   always_send_full_costmap: false
 
-  width: 60.0
-  height: 60.0
+  width: 70.0
+  height: 70.0
   resolution: 0.5
   origin_x: 0.0
   origin_y: 0.0

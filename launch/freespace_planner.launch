@@ -18,7 +18,7 @@
 
   <!-- Obstacle Sensor -->
   <node pkg="object_to_cloud" type="object_to_cloud_exe" name="object_to_cloud_node"/>
-<!--  <node pkg="custom_object_publisher" type="custom_object_publisher_exe" name="custom_object_publisher_node" output="screen"/>-->
+  <node pkg="custom_object_publisher" type="custom_object_publisher_exe" name="custom_object_publisher_node" output="screen"/>
 
   <!-- Odom Converter -->
   <node pkg="odom_publisher" type="odom_publisher_exe" name="odom_publisher_node"/>
@@ -33,6 +33,8 @@
     <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/global_costmap_params.yaml" command="load"/>
 
     <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/teb_local_planner_params.yaml" command="load"/>
+
+    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/global_planner.yaml" command="load"/>
 
     <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
     <param name="planner_frequency" value="1.0"/>
