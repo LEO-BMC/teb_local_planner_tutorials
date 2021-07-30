@@ -11,7 +11,7 @@ TebLocalPlannerROS:
  global_plan_overwrite_orientation: False
  allow_init_with_backwards_motion: False
  max_global_plan_lookahead_dist: 25.0
- global_plan_viapoint_sep: 2.0
+ global_plan_viapoint_sep: 5.0
  global_plan_prune_distance: 1
  exact_arc_length: False
  feasibility_check_no_poses: 2
@@ -23,7 +23,7 @@ TebLocalPlannerROS:
  max_vel_x_backwards: 1
  max_vel_y: 0.0
  max_vel_theta: 0.45 # the angular velocity is also bounded by min_turning_radius in case of a carlike robot (r = v / omega)
- acc_lim_x: 10.6
+ acc_lim_x: 10
  acc_lim_theta: 0.21
 
  # ********************** Carlike robot parameters ********************
@@ -33,10 +33,10 @@ TebLocalPlannerROS:
  # ********************************************************************
 
  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
-  type: "polygon"
-  radius: 0.2 # for type "circular"
-  line_start: [0.0, 0.0] # for type "line"
-  line_end: [0.4, 0.0] # for type "line"
+  type: "line"
+  radius: 1.0 # for type "circular"
+  line_start: [-0.84, 0.0] # for type "line"
+  line_end: [1.25, 0.0] # for type "line"
   front_offset: 0.2 # for type "two_circles"
   front_radius: 0.2 # for type "two_circles"
   rear_offset: 0.2 # for type "two_circles"
@@ -53,7 +53,7 @@ TebLocalPlannerROS:
    # Obstacles
 
  min_obstacle_dist: 0.27 # This value must also include our robot's expansion, since footprint_model is set to "line".
- inflation_dist: 1
+ inflation_dist: 2
  include_costmap_obstacles: False
  costmap_obstacles_behind_robot_dist: 5.0
  obstacle_poses_affected: 15
@@ -86,7 +86,7 @@ TebLocalPlannerROS:
  weight_inflation: 0.2
  weight_dynamic_obstacle: 10 # not in use yet
  weight_dynamic_obstacle_inflation: 0.2
- weight_viapoint: 0
+ weight_viapoint: 0.1
  weight_adapt_factor: 2
 
  # Homotopy Class Planner
@@ -99,8 +99,8 @@ TebLocalPlannerROS:
  selection_obst_cost_scale: 1.0
  selection_alternative_time_cost: False
 
- roadmap_graph_no_samples: 15
- roadmap_graph_area_width: 5
+ roadmap_graph_no_samples: 20
+ roadmap_graph_area_width: 15
  roadmap_graph_area_length_scale: 1.0
  h_signature_prescaler: 0.5
  h_signature_threshold: 0.1
@@ -109,7 +109,7 @@ TebLocalPlannerROS:
  viapoints_all_candidates: True
  delete_detours_backwards: True
  max_ratio_detours_duration_best_duration: 3.0
- visualize_hc_graph: False
+ visualize_hc_graph: True
  visualize_with_time_as_z_axis_scale: False
 
  # Recovery

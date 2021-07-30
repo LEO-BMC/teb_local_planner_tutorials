@@ -1,0 +1,57 @@
+<!-- -->
+<launch>
+
+  <!-- Global Parameters -->
+  <param name="/use_sim_time" value="false"/>
+
+  <!-- Maps -->
+  <!--  <node name="map_server" pkg="map_server" type="map_server"-->
+  <!--        args="$(find teb_local_planner_tutorials)/maps/emptiness.yaml" output="screen">-->
+  <!--    <param name="frame_id" value="map"/>-->
+  <!--  </node>-->
+
+
+  <!-- Transformations -->
+  <node pkg="tf" type="static_transform_publisher" name="map_to_odom_publisher" args="0 0 0 0 0 0 1 base_link odom_occupy 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_footprint_publisher"
+        args="0 0 0 0 0 0 1 base_link base_footprint 10"/>
+
+
+  <!-- Obstacle Sensor -->
+  <node pkg="object_to_cloud" type="object_to_cloud_exe" name="object_to_cloud_node"/>
+  <node pkg="custom_object_publisher" type="custom_object_publisher_exe" name="custom_object_publisher_node"
+        output="screen"/>
+
+  <!-- Odom Converter -->
+  <node pkg="odom_publisher" type="odom_publisher_exe" name="odom_publisher_node"/>
+
+  <!-- Control Command Converter -->
+  <!--  <node pkg="vehicle_cmd_publisher" type="vehicle_cmd_publisher_exe" name="vehicle_cmd_publisher_node"/>-->
+
+  <!-- TEB Optim -->
+<!--  <node pkg="teb_local_planner" type="test_optim_node" name="teb_local_planner_node"/>-->
+
+
+  <!-- Navigation -->
+  <!--  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">-->
+  <!--    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/local_costmap_params.yaml" command="load"/>-->
+  <!--    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/global_costmap_params.yaml" command="load"/>-->
+
+  <!--    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/teb_local_planner_params.yaml" command="load"/>-->
+
+  <!--    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/global_planner.yaml" command="load"/>-->
+
+  <!--    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/move_base.yaml" command="load"/>-->
+
+  <!--    <param name="base_global_planner" value="global_planner/GlobalPlanner"/>-->
+
+  <!--    <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>-->
+
+  <!--    <param name="clearing_rotation_allowed" value="false"/> &lt;!&ndash; Our carlike robot is not able to rotate in place &ndash;&gt;-->
+  <!--  </node>-->
+
+
+  <!-- Visualisation -->
+<!--  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/freespace_planner.rviz"/>-->
+
+</launch>

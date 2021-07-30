@@ -24,7 +24,7 @@
   <node pkg="odom_publisher" type="odom_publisher_exe" name="odom_publisher_node"/>
 
   <!-- Control Command Converter -->
-  <node pkg="vehicle_cmd_publisher" type="vehicle_cmd_publisher_exe" name="vehicle_cmd_publisher_node"/>
+<!--  <node pkg="vehicle_cmd_publisher" type="vehicle_cmd_publisher_exe" name="vehicle_cmd_publisher_node"/>-->
 
 
   <!-- Navigation -->
@@ -36,13 +36,11 @@
 
     <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/global_planner.yaml" command="load"/>
 
+    <rosparam file="$(find teb_local_planner_tutorials)/cfg/freespace/move_base.yaml" command="load"/>
+
     <param name="base_global_planner" value="global_planner/GlobalPlanner"/>
-    <param name="planner_frequency" value="1.0"/>
-    <param name="planner_patience" value="5.0"/>
 
     <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS"/>
-    <param name="controller_frequency" value="5.0"/>
-    <param name="controller_patience" value="15.0"/>
 
     <param name="clearing_rotation_allowed" value="false"/> <!-- Our carlike robot is not able to rotate in place -->
   </node>

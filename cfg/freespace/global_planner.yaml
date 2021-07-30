@@ -1,2 +1,6 @@
 GlobalPlanner:
   outline_map: false
+  use_dijkstra: true
+  visualize_potential: true
+  lethal_cost: 180
+  neutral_cost: 30

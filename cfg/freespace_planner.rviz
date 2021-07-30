@@ -6,9 +6,9 @@ Panels:
       Expanded:
         - /Global Options1
         - /Grid1
-        - /Local Planner1
-        - /Global Planner1
         - /Occupy1
+        - /InteractiveMarkers1
+        - /InteractiveMarkers1/Status1
       Splitter Ratio: 0.43313372135162354
     Tree Height: 657
   - Class: rviz/Selection
@@ -88,10 +88,7 @@ Visualization Manager:
           Marker Topic: /move_base/TebLocalPlannerROS/teb_markers
           Name: TebMarker
           Namespaces:
-            PolyObstacles: true
-            RobotFootprintModel: true
-            TebContainer: true
-            ViaPoints: true
+            {}
           Queue Size: 100
           Value: true
         - Alpha: 1
@@ -301,9 +298,9 @@ Visualization Manager:
           base_link:
             base_footprint:
               {}
-          grid_map:
             goal:
               {}
+          grid_map:
             start:
               {}
           odom:
@@ -371,12 +368,12 @@ Visualization Manager:
           Class: rviz/Map
           Color Scheme: map
           Draw Behind: false
-          Enabled: true
+          Enabled: false
           Name: occupy
           Topic: /occupy/costmap
           Unreliable: false
           Use Timestamp: false
-          Value: true
+          Value: false
         - Alpha: 1
           Axes Length: 1
           Axes Radius: 0.10000000149011612
@@ -385,29 +382,37 @@ Visualization Manager:
           Enabled: true
           Head Length: 0.699999988079071
           Head Radius: 1.5
-          Name: Pose
+          Name: goal
           Shaft Length: 2
           Shaft Radius: 0.5
           Shape: Arrow
-          Topic: /occupy/pose_stamped_goal
+          Topic: /move_base_simple/goal
           Unreliable: false
           Value: true
       Enabled: true
       Name: Occupy
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /reference_waypoints_smooth_rviz
-      Name: MarkerArray
+      Name: route_global
       Namespaces:
-        global_lane_array_marker: true
-        global_lane_waypoint_orientation_marker: true
+        {}
       Queue Size: 100
+      Value: false
+    - Class: rviz/InteractiveMarkers
+      Enable Transparency: true
+      Enabled: true
+      Name: InteractiveMarkers
+      Show Axes: false
+      Show Descriptions: true
+      Show Visual Aids: false
+      Update Topic: /marker_obstacles/update
       Value: true
   Enabled: true
   Global Options:
     Background Color: 85; 87; 83
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -430,21 +435,26 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0.01000002957880497
-      Class: rviz/TopDownOrtho
+      Class: rviz/Orbit
+      Distance: 11.16405963897705
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Focal Point:
+        X: 1.3354829549789429
+        Y: 0.0799081027507782
+        Z: -0.00018662810907699168
+      Focal Shape Fixed Size: false
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 11.192648887634277
+      Pitch: 1.5647963285446167
       Target Frame: base_link
-      Value: TopDownOrtho (rviz)
-      X: 9.55941390991211
-      Y: -16.303754806518555
+      Value: Orbit (rviz)
+      Yaw: 4.675387382507324
     Saved: ~
 Window Geometry:
   Displays:
@@ -462,5 +472,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1518
-  X: 215
+  X: 211
   Y: 0
